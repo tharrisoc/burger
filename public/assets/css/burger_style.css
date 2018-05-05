@@ -1,0 +1,62 @@
+body {
+    background-color : #f9d17f;
+  }
+
+  .container {
+    margin-top : 2%;
+  }
+
+  #burgerpic {
+    margin-left : auto;
+    margin-right : auto;
+  }
+
+  #appname {
+    color : #ca0e00;
+    font-size : 1.2rem;
+    margin-left : -15%;
+    padding-top : 5%;
+  }
+
+  #burgername {
+    width: 15rem;
+  }
+  #submit {
+    margin-left : 20%;
+    margin-right : auto;
+    margin-top : 2%;
+    margin-bottom : 1%;
+  }
+
+  #instructions {
+    font-size : xx-small;
+  }
+
+  #undevouredburgers {
+
+  }
+
+  .undevouredtextdiv {
+
+  }
+
+  .undevouredtext {
+
+  }
+
+  #devouredbuttons {
+
+  }
+
+  #devouredburgers {
+
+  }
+
+  .devouredtextdiv {
+
+  }
+
+  .devouredtext {
+
+  }
+  

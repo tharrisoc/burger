@@ -1,0 +1,25 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "description": "Burger Logger using MySQL, Node, Express and Handlebars",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tharrisoc/burger.git"
+  },
+  "author": "Thomas Harris",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tharrisoc/burger/issues"
+  },
+  "homepage": "https://github.com/tharrisoc/burger#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  }
+}
