@@ -1,11 +1,13 @@
 'use strict';
 
-var express     = require("express");
-var bodyParser  = require("body-parser");
-var exphbs      = require('express-handlebars');
-var mysql       = require('mysql');
-var serveStatic = require('serve-static');
-var orm         = require("./config/orm.js");
+var express      = require("express");
+var bodyParser   = require("body-parser");
+var exphbs       = require('express-handlebars');
+var mysql        = require('mysql');
+var serveStatic  = require('serve-static');
+const fileExists = require('file-exists');
+
+var orm          = require("./config/orm.js");
 
 var app = express();
 
@@ -68,6 +70,7 @@ function storeUndevouredBurgerList(result) {
 
   for ( var i = 0; i < numItems; i++ ) {
     text = "{ udtext : " + result[i].id + '.' + result[i].burger_name + "}";
+    if (i < (numItems - 1)) { text += ', '; }
     data.undevouredList.push(text);
     // Also create the value for the "Devour it!"" button's name attribute
     btnName = 'devoured#' + result[i].id;
@@ -86,8 +89,19 @@ function storeDevouredBurgerList(result) {
 
   for ( var i = 0; i < numItems; i++ ) {
     text = "{ dtext : " + result[i].id + '.' + result[i].burger_name + "}";
+    if (i < (numItems - 1)) { text += ', '; }
     data.devouredList.push(text);
   }
 }
 
 app.listen(PORT);
+
+/* *************************DEBUG start******************** */
+fileExists('public/assets/img/burgersmall.jpg',
+     (err, exists) => console.log('Image file exists: ' + exists));
+
+fileExists('public/assets/css/burger_style.css',
+     (err, exists) => console.log('Stylesheet file exists: ' + exists));
+
+/* *************************DEBUG end ********************* */
+

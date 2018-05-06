@@ -35,3 +35,27 @@ As a side note, the following is a mockup of the top portion of the page that I 
 
 On the real page, the two lists of unconsumed and consumed burgers would also be displayed.
 
+###Update 1
+
+I finally realized that the problem is not on the server side -- the problem is that the browser is not successfully downloading the image and the stylesheet.
+
+The Network panel in Chrome shows the following errors:
+
+for CSS, it shows that  
+
+    bootstrap.min.css  is downloaded successfully [200 OK, stylesheet]    
+    burger_style.css /public/assets/css fails [Status (canceled) stylesheet]
+
+for Img, it shows  
+
+    burgersmall.jpg /public/assets/img fails [Status 404 Not Found text/html]
+
+The following excerpt at  
+
+  <https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Client-side_web_APIs/Fetching_data>
+
+*may* describe what is happening:
+
+>Some browsers (including Chrome) will not run XHR requests if you just run the example from a local file. This is because of security restrictions.
+
+
