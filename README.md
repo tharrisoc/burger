@@ -21,7 +21,7 @@ My declaration is:
 
 <link rel="stylesheet" type="text/css" href="public/assets/css/burger_style.css">
 
-and as you can see, the background color that is assigned in that file is being used here.
+[Note: in my markdown editor, the background color that is assigned in that file is applied to this README, again showing that the path is correct.]
 
 The error message I am seeing for this case is:
 
