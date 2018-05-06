@@ -35,7 +35,7 @@ As a side note, the following is a mockup of the top portion of the page that I 
 
 On the real page, the two lists of unconsumed and consumed burgers would also be displayed.
 
-###Update 1
+### Update 1
 
 I finally realized that the problem is not on the server side -- the problem is that the browser is not successfully downloading the image and the stylesheet.
 
