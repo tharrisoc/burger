@@ -28,7 +28,7 @@ MIME checking is enabled.
         </div>
       </div>
 
-      <!-- The list of unconsumed burgers and "Devourit!" buttons in the left column -->
+      <!-- The list of unconsumed burgers and "Devour it!" buttons in the left column -->
       <div class="row">
         <div class="col-md-3 offset-md-1" id="undevouredburgers">
           {{#each data.undevouredList}}
@@ -43,7 +43,7 @@ MIME checking is enabled.
           {{/each}}
         </div>
 
-        <!-- The list of cunsumed burgers in the right column -->
+        <!-- The list of consumed burgers in the right column -->
         <div class="col-md-3" id="devouredburgers">
           {{#each data.DevouredList}}
             <div class="devouredtextdiv"><span class="devouredtext">{{dtext}}</span></div>
@@ -51,9 +51,10 @@ MIME checking is enabled.
         </div>
       </div>
 
+      <!-- The form for adding a newly-ordered, unconsumed burger to the database -->
       <div class="row">
         <div class="col-md-7 offset-md-3">
-          <form action="" method="POST">
+          <form action="/api/add" method="POST">
             <input type ="text"   class="form-control form-control-lg" name="burgername" id="burgername" />
             <button type="submit" class="btn btn-primary btn-sm" name="submit" id="submit">Submit</button>
             <p id="instructions"

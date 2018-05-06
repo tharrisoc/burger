@@ -31,8 +31,7 @@ var data = {
   devouredList : []
 };
 
-// Serve index.handlebars to the root route
-
+// Route for serving index.handlebars
 app.get("/", function(req, res) {
   // get any uneaten burgers from the database -- they will be listed
   // in the left column of the page, along with "Devour it!" buttons
@@ -49,6 +48,13 @@ app.get("/", function(req, res) {
   // the page to the browser
   res.render("index", data);
 });
+
+// Route for adding a newly-ordered burger to the database
+app.post("/api/add", function(req, res) {
+  orm.insertOne(burgers, [burger_name, devoured], [req.body.burgername, 0]);
+  res.redirect("/");
+});
+
 
 // This function creates a list of the burgers whose devoured field is 0
 function storeUndevouredBurgerList(result) {
