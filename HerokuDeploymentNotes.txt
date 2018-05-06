@@ -1,0 +1,189 @@
+Thomass-MacBook-Pro:burger thomaswharris$ heroku status
+Apps:      No known issues at this time.
+Data:      No known issues at this time.
+Tools:     No known issues at this time.
+
+Thomass-MacBook-Pro:burger thomaswharris$ node --version
+v9.2.1
+Thomass-MacBook-Pro:burger thomaswharris$ npm --version
+5.6.0
+Thomass-MacBook-Pro:burger thomaswharris$ git --version
+git version 2.15.1 (Apple Git-101)
+
+Thomass-MacBook-Pro:burger thomaswharris$ heroku ps:scale web=1
+Scaling dynos... done, now running web at 1:Free
+
+Thomass-MacBook-Pro:burger thomaswharris$ heroku open
+Thomass-MacBook-Pro:burger thomaswharris$ 
+
+The app URL is https://mighty-springs-63277.herokuapp.com/
+
+The following message appeared in the browser:
+
+Application error
+An error occurred in the application and your page could not be served.
+
+
+Thomass-MacBook-Pro:burger thomaswharris$ heroku logs
+2018-05-06T18:08:13.170441+00:00 app[web.1]: error connecting: Error: connect ECONNREFUSED 127.0.0.1:3306
+2018-05-06T18:08:13.170444+00:00 app[web.1]:     at Object._errnoException (util.js:1022:11)
+2018-05-06T18:08:13.170445+00:00 app[web.1]:     at _exceptionWithHostPort (util.js:1044:20)
+2018-05-06T18:08:13.170447+00:00 app[web.1]:     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1198:14)
+2018-05-06T18:08:13.170449+00:00 app[web.1]:     --------------------
+2018-05-06T18:08:13.170450+00:00 app[web.1]:     at Protocol._enqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+2018-05-06T18:08:13.170452+00:00 app[web.1]:     at Protocol.handshake (/app/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+2018-05-06T18:08:13.170454+00:00 app[web.1]:     at Connection.connect (/app/node_modules/mysql/lib/Connection.js:130:18)
+2018-05-06T18:08:13.170455+00:00 app[web.1]:     at Object.<anonymous> (/app/config/connection.js:23:12)
+2018-05-06T18:08:13.170457+00:00 app[web.1]:     at Module._compile (module.js:652:30)
+2018-05-06T18:08:13.170458+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:663:10)
+2018-05-06T18:08:13.170474+00:00 app[web.1]:     at Module.load (module.js:565:32)
+2018-05-06T18:08:13.170477+00:00 app[web.1]:     at tryModuleLoad (module.js:505:12)
+2018-05-06T18:08:13.170478+00:00 app[web.1]:     at Function.Module._load (module.js:497:3)
+2018-05-06T18:08:13.170480+00:00 app[web.1]:     at Module.require (module.js:596:17)
+2018-05-06T18:08:13.672495+00:00 heroku[web.1]: State changed from starting to up
+2018-05-06T18:41:37.341321+00:00 heroku[web.1]: Idling
+2018-05-06T18:41:37.342811+00:00 heroku[web.1]: State changed from up to down
+2018-05-06T18:41:38.275735+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2018-05-06T18:41:38.406979+00:00 heroku[web.1]: Process exited with status 143
+2018-05-06T20:25:02.569618+00:00 heroku[web.1]: Unidling
+2018-05-06T20:25:02.570086+00:00 heroku[web.1]: State changed from down to starting
+2018-05-06T20:25:05.584146+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-05-06T20:25:09.136363+00:00 app[web.1]: > burger@1.0.0 start /app
+2018-05-06T20:25:09.136318+00:00 app[web.1]: 
+2018-05-06T20:25:09.136366+00:00 app[web.1]: 
+2018-05-06T20:25:09.136365+00:00 app[web.1]: > node server.js
+2018-05-06T20:25:10.051466+00:00 heroku[web.1]: State changed from starting to up
+2018-05-06T20:25:09.919441+00:00 app[web.1]: Image file exists: true
+2018-05-06T20:25:09.920771+00:00 app[web.1]: Stylesheet file exists: true
+2018-05-06T20:25:09.929518+00:00 app[web.1]: error connecting: Error: connect ECONNREFUSED 127.0.0.1:3306
+2018-05-06T20:25:09.929522+00:00 app[web.1]:     at Object._errnoException (util.js:1022:11)
+2018-05-06T20:25:09.929524+00:00 app[web.1]:     at _exceptionWithHostPort (util.js:1044:20)
+2018-05-06T20:25:09.929526+00:00 app[web.1]:     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1198:14)
+2018-05-06T20:25:09.929528+00:00 app[web.1]:     --------------------
+2018-05-06T20:25:09.929530+00:00 app[web.1]:     at Protocol._enqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+2018-05-06T20:25:09.929531+00:00 app[web.1]:     at Protocol.handshake (/app/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+2018-05-06T20:25:09.929533+00:00 app[web.1]:     at Connection.connect (/app/node_modules/mysql/lib/Connection.js:130:18)
+2018-05-06T20:25:09.929535+00:00 app[web.1]:     at Object.<anonymous> (/app/config/connection.js:23:12)
+2018-05-06T20:25:09.929536+00:00 app[web.1]:     at Module._compile (module.js:652:30)
+2018-05-06T20:25:09.929538+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:663:10)
+2018-05-06T20:25:09.929539+00:00 app[web.1]:     at Module.load (module.js:565:32)
+2018-05-06T20:25:09.929541+00:00 app[web.1]:     at tryModuleLoad (module.js:505:12)
+2018-05-06T20:25:09.929542+00:00 app[web.1]:     at Function.Module._load (module.js:497:3)
+2018-05-06T20:25:09.929544+00:00 app[web.1]:     at Module.require (module.js:596:17)
+2018-05-06T20:25:10.746266+00:00 app[web.1]: /app
+2018-05-06T20:25:10.808103+00:00 app[web.1]: Cannot enqueue Query after fatal error.
+2018-05-06T20:25:10.828366+00:00 app[web.1]: /app/config/orm.js:60
+2018-05-06T20:25:10.828369+00:00 app[web.1]:           throw err
+2018-05-06T20:25:10.828371+00:00 app[web.1]:           ^
+2018-05-06T20:25:10.828373+00:00 app[web.1]: 
+2018-05-06T20:25:10.828375+00:00 app[web.1]: Error: Cannot enqueue Query after fatal error.
+2018-05-06T20:25:10.828377+00:00 app[web.1]:     at Protocol._validateEnqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:201:16)
+2018-05-06T20:25:10.828379+00:00 app[web.1]:     at Protocol._enqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:139:13)
+2018-05-06T20:25:10.828381+00:00 app[web.1]:     at Connection.query (/app/node_modules/mysql/lib/Connection.js:208:25)
+2018-05-06T20:25:10.828383+00:00 app[web.1]:     at Object.selectAllWhere (/app/config/orm.js:56:16)
+2018-05-06T20:25:10.828385+00:00 app[web.1]:     at /app/server.js:41:7
+2018-05-06T20:25:10.828386+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2018-05-06T20:25:10.828388+00:00 app[web.1]:     at next (/app/node_modules/express/lib/router/route.js:137:13)
+2018-05-06T20:25:10.828390+00:00 app[web.1]:     at Route.dispatch (/app/node_modules/express/lib/router/route.js:112:3)
+2018-05-06T20:25:10.828391+00:00 app[web.1]:     at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)
+2018-05-06T20:25:10.828393+00:00 app[web.1]:     at /app/node_modules/express/lib/router/index.js:281:22
+2018-05-06T20:25:10.896950+00:00 app[web.1]: npm ERR! code ELIFECYCLE
+2018-05-06T20:25:10.897410+00:00 app[web.1]: npm ERR! errno 1
+2018-05-06T20:25:10.898901+00:00 app[web.1]: npm ERR! burger@1.0.0 start: `node server.js`
+2018-05-06T20:25:10.899003+00:00 app[web.1]: npm ERR! Exit status 1
+2018-05-06T20:25:10.899185+00:00 app[web.1]: npm ERR! 
+2018-05-06T20:25:10.899289+00:00 app[web.1]: npm ERR! Failed at the burger@1.0.0 start script.
+2018-05-06T20:25:10.899391+00:00 app[web.1]: npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+2018-05-06T20:25:10.933993+00:00 app[web.1]: 
+2018-05-06T20:25:10.934247+00:00 app[web.1]: npm ERR! A complete log of this run can be found in:
+2018-05-06T20:25:10.934408+00:00 app[web.1]: npm ERR!     /app/.npm/_logs/2018-05-06T20_25_10_901Z-debug.log
+2018-05-06T20:25:10.849049+00:00 heroku[router]: at=error code=H13 desc="Connection closed without response" method=GET path="/" host=mighty-springs-63277.herokuapp.com request_id=b25e1d7a-2235-429d-a0e2-da44643a57c0 fwd="72.197.3.235" dyno=web.1 connect=1ms service=190ms status=503 bytes=0 protocol=https
+2018-05-06T20:25:11.015778+00:00 heroku[web.1]: Process exited with status 1
+2018-05-06T20:25:11.031363+00:00 heroku[web.1]: State changed from up to crashed
+2018-05-06T20:25:11.033064+00:00 heroku[web.1]: State changed from crashed to starting
+2018-05-06T20:25:14.005596+00:00 heroku[web.1]: Starting process with command `npm start`
+2018-05-06T20:25:16.748502+00:00 app[web.1]: 
+2018-05-06T20:25:16.748521+00:00 app[web.1]: > burger@1.0.0 start /app
+2018-05-06T20:25:16.748523+00:00 app[web.1]: > node server.js
+2018-05-06T20:25:16.748524+00:00 app[web.1]: 
+2018-05-06T20:25:17.393958+00:00 app[web.1]: Image file exists: true
+2018-05-06T20:25:17.395156+00:00 app[web.1]: Stylesheet file exists: true
+2018-05-06T20:25:17.399402+00:00 app[web.1]: error connecting: Error: connect ECONNREFUSED 127.0.0.1:3306
+2018-05-06T20:25:17.399405+00:00 app[web.1]:     at Object._errnoException (util.js:1022:11)
+2018-05-06T20:25:17.399407+00:00 app[web.1]:     at _exceptionWithHostPort (util.js:1044:20)
+2018-05-06T20:25:17.399409+00:00 app[web.1]:     at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1198:14)
+2018-05-06T20:25:17.399411+00:00 app[web.1]:     --------------------
+2018-05-06T20:25:17.399413+00:00 app[web.1]:     at Protocol._enqueue (/app/node_modules/mysql/lib/protocol/Protocol.js:145:48)
+2018-05-06T20:25:17.399414+00:00 app[web.1]:     at Protocol.handshake (/app/node_modules/mysql/lib/protocol/Protocol.js:52:23)
+2018-05-06T20:25:17.399416+00:00 app[web.1]:     at Connection.connect (/app/node_modules/mysql/lib/Connection.js:130:18)
+2018-05-06T20:25:17.399417+00:00 app[web.1]:     at Object.<anonymous> (/app/config/connection.js:23:12)
+2018-05-06T20:25:17.399419+00:00 app[web.1]:     at Module._compile (module.js:652:30)
+2018-05-06T20:25:17.399421+00:00 app[web.1]:     at Object.Module._extensions..js (module.js:663:10)
+2018-05-06T20:25:17.399422+00:00 app[web.1]:     at Module.load (module.js:565:32)
+2018-05-06T20:25:17.399424+00:00 app[web.1]:     at tryModuleLoad (module.js:505:12)
+2018-05-06T20:25:17.399426+00:00 app[web.1]:     at Function.Module._load (module.js:497:3)
+2018-05-06T20:25:17.399427+00:00 app[web.1]:     at Module.require (module.js:596:17)
+2018-05-06T20:25:17.733312+00:00 heroku[web.1]: State changed from starting to up
+2018-05-06T20:25:19.219572+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=mighty-springs-63277.herokuapp.com request_id=80632467-65af-405c-b6f2-6360e73eecf0 fwd="72.197.3.235" dyno=web.1 connect=5001ms service=27ms status=404 bytes=394 protocol=https
+Thomass-MacBook-Pro:burger thomaswharris$ 
+
+Thomass-MacBook-Pro:burger thomaswharris$ heroku local
+[WARN] ENOENT: no such file or directory, open 'Procfile'
+[OKAY] package.json file found - trying 'npm start'
+[WARN] No ENV file found
+[WARN] ENOENT: no such file or directory, open 'Procfile'
+[OKAY] package.json file found - trying 'npm start'
+13:38:35 web.1   |  > burger@1.0.0 start /Users/thomaswharris/Desktop/code/ucsdcourse/burger/burger
+13:38:35 web.1   |  > node server.js
+13:38:36 web.1   |  Image file exists: true
+13:38:36 web.1   |  Stylesheet file exists: true
+13:38:36 web.1   |  connected as id 12
+^C[WARN] Interrupted by User
+[DONE] Killing all processes with signal  SIGINT
+13:39:45 web.1   Exited with exit code null
+
+When running locally, use port 5000 by default
+
+Thomass-MacBook-Pro:burger thomaswharris$ heroku local web
+[WARN] No ENV file found
+[WARN] ENOENT: no such file or directory, open 'Procfile'
+[OKAY] package.json file found - trying 'npm start'
+13:39:52 web.1   |  > burger@1.0.0 start /Users/thomaswharris/Desktop/code/ucsdcourse/burger/burger
+13:39:52 web.1   |  > node server.js
+13:39:53 web.1   |  Image file exists: true
+13:39:53 web.1   |  Stylesheet file exists: true
+13:39:53 web.1   |  connected as id 13
+13:48:07 web.1   |  /Users/thomaswharris/Desktop/code/ucsdcourse/burger/burger
+13:48:07 web.1   |  [ RowDataPacket { id: 5, burger_name: 'Dave\'s Single', devoured: 0 },
+13:48:07 web.1   |    RowDataPacket { id: 6, burger_name: 'Western Bacon Cheeseburger', devoured: 0 } ]
+13:48:07 web.1   |  Undevoured
+13:48:07 web.1   |  [ RowDataPacket { id: 5, burger_name: 'Dave\'s Single', devoured: 0 },
+13:48:07 web.1   |    RowDataPacket { id: 6, burger_name: 'Western Bacon Cheeseburger', devoured: 0 } ]
+13:48:07 web.1   |  [ RowDataPacket {
+13:48:07 web.1   |      id: 1,
+13:48:07 web.1   |      burger_name: 'Quarter Pounder with Cheese',
+13:48:07 web.1   |      devoured: 1 },
+13:48:07 web.1   |    RowDataPacket { id: 2, burger_name: 'Superstar with Cheese', devoured: 1 },
+13:48:07 web.1   |    RowDataPacket { id: 3, burger_name: 'Double Double', devoured: 1 },
+13:48:07 web.1   |    RowDataPacket {
+13:48:07 web.1   |      id: 4,
+13:48:07 web.1   |      burger_name: 'Double Beef Whopper with Cheese',
+13:48:07 web.1   |      devoured: 1 } ]
+13:48:07 web.1   |  Devoured
+13:48:07 web.1   |  [ RowDataPacket {
+13:48:07 web.1   |      id: 1,
+13:48:07 web.1   |      burger_name: 'Quarter Pounder with Cheese',
+13:48:07 web.1   |      devoured: 1 },
+13:48:07 web.1   |    RowDataPacket { id: 2, burger_name: 'Superstar with Cheese', devoured: 1 },
+13:48:07 web.1   |    RowDataPacket { id: 3, burger_name: 'Double Double', devoured: 1 },
+13:48:07 web.1   |    RowDataPacket {
+13:48:07 web.1   |      id: 4,
+13:48:07 web.1   |      burger_name: 'Double Beef Whopper with Cheese',
+13:48:07 web.1   |      devoured: 1 } ]
+^C[WARN] Interrupted by User
+[DONE] Killing all processes with signal  SIGINT
+13:54:26 web.1   Exited with exit code null
+
+The same errors occur with regard to burgersmall.jpg and burger_style.css,
+when running locally on Heroku, as occur when running on the Mac.
+ 

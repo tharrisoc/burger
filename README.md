@@ -59,3 +59,14 @@ The following excerpt at
 >Some browsers (including Chrome) will not run XHR requests if you just run the example from a local file. This is because of security restrictions.
 
 
+### Update 2
+
+On Heroku, the JawsDB add-on was deployed per the instructional video and MSQLHerokuDeploymentProcess.pdf. 
+
+The burgers_db database and burgers table were created, and the table was seeded using the MySQL command line monitor.
+
+The app itself was then deployed to Heroku.
+
+When the app was run on Heroku, it crashed (Application error. "An error occured in the application and your page could not be served.") The details can be found in HerokuDeployentNotes.txt.
+
+When tha app was run locally using the `heroku local web` command, it behaved in exactly the same way as it does when it is run on the Mac (i.e. burgersmall.jpg and burger_style.css were not retrieved.)
