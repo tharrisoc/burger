@@ -1,2 +1,37 @@
 # burger
 Burger Logger using MySQL, Node, Express and Handlebars
+
+The following bugs are showstoppers, despite their simplicity.
+
+I am able to load neither the image of the burger, nor the css style sheet when running the script using node. I have tried every variant of the paths to these items that I can think of, but have not been able to find the correct combination of path elements from node's perspective.
+
+The path below was copied directly from the `index.handlebars` file, and as you can see, the copy of the image as stored in this repository is found at that location.
+
+`<img id="burgerpic" src="public/assets/img/burgersmall.jpg" width="77" height="81" />`
+
+<img id="burgerpic" src="public/assets/img/burgersmall.jpg" width="77" height="81" />
+
+The message I see when running the script in node is:
+`GET http://localhost:3000/public/assets/img/burgersmall.jpg 404 (Not Found)`
+
+I have a similar, but slightly different problem with the style sheet.
+
+My declaration is:
+`<link rel="stylesheet" type="text/css" href="public/assets/css/burger_style.css">`
+
+<link rel="stylesheet" type="text/css" href="public/assets/css/burger_style.css">
+
+and as you can see, the background color that is assigned in that file is being used here.
+
+The error message I am seeing for this case is:
+
+`Refused to apply style from 'http://localhost:3000/public/assets/css/burger_style.css'
+because its MIME type ('text/html') is not a supported stylesheet MIME type
+and strict MIME checking is enabled.`
+
+As a side note, the following is a mockup of the top portion of the page that I am trying to display.
+
+![Screenshot showing the Eat Da Burger Mockup Page](screenshots/EatDaBurgerMockup.png "Eat Da Burger Mockup")
+
+On the real page, the two lists of unconsumed and consumed burgers would also be displayed.
+
