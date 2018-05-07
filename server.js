@@ -54,7 +54,7 @@ app.get("/", function(req, res) {
 
 // Route for adding a newly-ordered burger to the database
 app.post("/api/add", function(req, res) {
-  orm.insertOne(burgers, [burger_name, devoured], [req.body.burgername, 0]);
+  orm.insertOne('burgers', [burger_name, devoured], [req.body.burgername, 0]);
   res.redirect("/");
 });
 
