@@ -70,3 +70,9 @@ The app itself was then deployed to Heroku.
 When the app was run on Heroku, it crashed (Application error. "An error occured in the application and your page could not be served.") The details can be found in HerokuDeployentNotes.txt.
 
 When tha app was run locally using the `heroku local web` command, it behaved in exactly the same way as it does when it is run on the Mac (i.e. burgersmall.jpg and burger_style.css were not retrieved.)
+
+
+### Update 3
+
+The Application error mentioned in Update 2 has been fixed. The script no longer crashes on startup, and is able to retrieve rows from the burgers table. However, the problem regarding the image and css files persists.
+
