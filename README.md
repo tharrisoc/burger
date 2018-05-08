@@ -85,6 +85,4 @@ Insertion of newly-purchased, unconsumed burgers into the `burgers` table when t
 
 * Investigate and fix the inability of the browser to load assets.
 * The current code redisplays the entire page whenever a new burger is added to the database. Refactor the code so that AJAX is used for both ADD and UPDATE queries.
-
-
-
+* Refactor the code so that it fully implements the Model-View-Controller design pattern.
