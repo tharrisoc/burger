@@ -30,18 +30,20 @@ MIME checking is enabled.
 
       <!-- The list of unconsumed burgers and "Devour it!" buttons in the left column -->
       <div class="row">
-        <div class="col-md-3 offset-md-1" id="undevouredburgers">
-          {{#each data.undevouredList}}
-            <div class="undevouredtextdiv"><span class="undevouredtext">{{udtext}}</span></div>
-          {{/each}}
-        </div>
+        <form action="/api/update" method="POST">
+          <div class="col-md-3 offset-md-1" id="undevouredburgers">
+            {{#each data.undevouredList}}
+              <div class="undevouredtextdiv"><span class="undevouredtext">{{udtext}}</span></div>
+            {{/each}}
+          </div>
 
-        <div class="col-md-1 offset-md-1" id="devouredbuttons">
-          {{#each data.buttonList}}
-            <button type="submit" class="btn btn-sm btn-outline-secondary" 
-                    name="devoured#{{devid}}">Devour it!</button>
-          {{/each}}
-        </div>
+          <div class="col-md-1 offset-md-1" id="devouredbuttons">
+            {{#each data.buttonList}}
+              <button type="submit" class="btn btn-sm btn-outline-secondary form-control" 
+                      name="devoured#{{devid}}">Devour it!</button>
+            {{/each}}
+          </div>
+        </form>
 
         <!-- The list of consumed burgers in the right column -->
         <div class="col-md-3" id="devouredburgers">
@@ -63,6 +65,7 @@ MIME checking is enabled.
         </div>
       </div>
     </div>
+    
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -75,8 +78,6 @@ MIME checking is enabled.
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
             integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
             crossorigin="anonymous"></script>
-    <!-- Main JS -->
-<!-- <script src="js/main.js"></script> -->
 
   </body>
 </html>

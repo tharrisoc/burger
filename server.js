@@ -58,6 +58,12 @@ app.post("/api/add", function(req, res) {
   res.redirect("/");
 });
 
+// Route for updating a consumed burger in the database
+app.post("/api/update", function(req, res) {
+  orm.updateOne('burgers', 'devoured', true, 'id',
+                req.body.name.substring(9));
+  res.redirect("/");
+});
 
 // This function creates a list of the burgers whose devoured field is 0
 function storeUndevouredBurgerList(result) {

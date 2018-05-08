@@ -81,3 +81,10 @@ The Application error mentioned in Update 2 has been fixed. The script no longer
 
 Insertion of newly-purchased, unconsumed burgers into the `burgers` table when the Submit button is clicked is now working.
 
+### ToDo
+
+* Investigate and fix the inability of the browser to load assets.
+* The current code redisplays the entire page whenever a new burger is added to the database. Refactor the code so that AJAX is used for both ADD and UPDATE queries.
+
+
+

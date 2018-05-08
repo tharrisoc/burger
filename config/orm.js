@@ -17,7 +17,6 @@ var orm = {
           console.log(err.message);
           throw err;
         }
-        console.log(result);
         cb(result);
       });
   },
