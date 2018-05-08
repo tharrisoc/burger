@@ -76,3 +76,8 @@ When tha app was run locally using the `heroku local web` command, it behaved in
 
 The Application error mentioned in Update 2 has been fixed. The script no longer crashes on startup, and is able to retrieve rows from the burgers table. However, the problem regarding the image and css files persists.
 
+
+### Update 4
+
+Insertion of newly-purchased, unconsumed burgers into the `burgers` table when the Submit button is clicked is now working.
+

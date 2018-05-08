@@ -1,3 +1,4 @@
+var SqlString = require('sqlstring');
 var connection = require("./connection.js");
 
 // Object Relational Mapper (ORM)
@@ -21,9 +22,13 @@ var orm = {
       });
   },
   insertOne: function(tableInput, columnList, valueList) {
-    var queryString = "INSERT INTO ?? (??) VALUES (??)";
+    var columns = columnList.join(', ');
+    var values  = concatValues(valueList);
 
-    connection.query(queryString, [tableInput, columnList, valueList],
+    var queryString = 
+      "INSERT INTO " + tableInput + " ( " + columns + " ) VALUES ( " + values + " )";
+
+    connection.query(queryString,
       function(err, result) {
         if (err) {
           console.log(err.message);
@@ -64,5 +69,16 @@ var orm = {
       });
   }
 };
+
+function concatValues(items) {
+  var string = '';
+  var numItems = items.length;
+  for (var i = 0; i < numItems; i++) {
+    if (i > 0) {string += ', ';};
+    string += SqlString.escape(items[i]);
+  }
+
+  return string;
+}
 
 module.exports = orm;
