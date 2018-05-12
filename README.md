@@ -81,8 +81,21 @@ The Application error mentioned in Update 2 has been fixed. The script no longer
 
 Insertion of newly-purchased, unconsumed burgers into the `burgers` table when the Submit button is clicked is now working.
 
+### Update 5
+
+A fix for the css/img download bug was found on the following webpage:
+
+<https://forum.freecodecamp.org/t/loading-css-file-on-front-end-solved/25550>
+
+That fix has been applied to server.js and index.handlebars.
+
+Major changes have been made to the code to accommodate the asynchronous nature of the completion of SQL queries. At least some of that new code appears to be working, although it is in dire need of refactoring.
+
+The current bug is that the handlebars template is not being filled in with data. The html that is delivered to the browser contains just the template code, and none of the data that is being read from the database.
+
+
 ### ToDo
 
-* Investigate and fix the inability of the browser to load assets.
+* Investigate and fix the inability of the browser to load assets.  [COMPLETED]
 * The current code redisplays the entire page whenever a new burger is added to the database. Refactor the code so that AJAX is used for both ADD and UPDATE queries.
 * Refactor the code so that it fully implements the Model-View-Controller design pattern.
