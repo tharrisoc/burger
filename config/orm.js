@@ -8,7 +8,8 @@ var connection = require("./connection.js");
 // These help avoid SQL injection
 // https://en.wikipedia.org/wiki/SQL_injection
 var orm = {
-  selectAll: function(tableInput, cb) {
+  selectAll: function(tableInput, response, cb) {
+console.log("Enter selectAll()");  //DEBUG
     var queryString = "SELECT * FROM ??";
 
     connection.query(queryString, [tableInput],
@@ -17,10 +18,12 @@ var orm = {
           console.log(err.message);
           throw err;
         }
-        cb(result);
+console.log(result);  // DEBUG
+console.log(cb);  // DEBUG
+        cb(result, response);
       });
   },
-  insertOne: function(tableInput, columnList, valueList) {
+  insertOne: function(tableInput, columnList, valueList, response, cb) {
     var columns = columnList.join(', ');
     var values  = concatValues(valueList);
 
@@ -33,11 +36,12 @@ var orm = {
           console.log(err.message);
           throw err
         }
-        console.log(result);
         console.log(valueList + " inserted successfully");
+        console.log(result);
+        this.selectAll(tableInput, response, cb);
       });
   },
-  updateOne: function(tableInput, changeColumn, newValue, whereColumn, whereValue) {
+  updateOne: function(tableInput, changeColumn, newValue, whereColumn, whereValue, response, cb) {
     // TODO: the query should be able to update more than one column at a time
     var queryString = "UPDATE ?? SET ?? = ?? WHERE ?? = ??";
 
@@ -49,8 +53,9 @@ var orm = {
           console.log(err.message);
           throw err;
         }
-        console.log(result);
         console.log("id " + whereValue + " updated successfully");
+        console.log(result);
+        this.selectAll(tableInput. response, cb);
       }
     );
   },
@@ -63,9 +68,11 @@ var orm = {
           console.log(err.message);
           throw err
         }
-        console.log(result);
         cb(result);
       });
+  },
+  nullDBOperation: function(tableInput, response, cb) {
+    this.selectAll(tableInput, response, cb);
   }
 };
 
